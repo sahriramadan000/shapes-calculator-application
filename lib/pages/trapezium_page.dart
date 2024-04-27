@@ -43,9 +43,9 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/trapezium.png',
-                      width: 100,
-                      height: 100,
+                      'assets/trapezium_area.png',
+                      width: 170,
+                      height: 170,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
@@ -147,9 +147,9 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/trapezium.png',
-                      width: 100,
-                      height: 100,
+                      'assets/trapezium_perimeter.png',
+                      width: 170,
+                      height: 170,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
@@ -249,7 +249,7 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                               _perimeter = 0;
                             });
                           },
-                          child: Text('Clear'),
+                          child: const Text('Clear'),
                         ),
                       ],
                     ),

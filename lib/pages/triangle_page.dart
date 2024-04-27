@@ -11,9 +11,7 @@ class _TrianglePageState extends State<TrianglePage> {
 
   double _base = 0;
   double _height = 0;
-  double _sideA = 0;
-  double _sideB = 0;
-  double _sideC = 0;
+  double _side = 0;
   double _area = 0;
   double _perimeter = 0;
 
@@ -41,9 +39,9 @@ class _TrianglePageState extends State<TrianglePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/triangle.png',
-                      width: 100,
-                      height: 100,
+                      'assets/triangle_area.png',
+                      width: 150,
+                      height: 130,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
@@ -126,61 +124,25 @@ class _TrianglePageState extends State<TrianglePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/triangle.png',
-                      width: 100,
-                      height: 100,
+                      'assets/triangle_equilateral_perimeter.png',
+                      width: 150,
+                      height: 130,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Side A',
+                        labelText: 'Side',
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter a side A';
+                          return 'Please enter a side';
                         }
                         return null;
                       },
                       onSaved: (value) {
                         setState(() {
-                          _sideA = double.parse(value!);
-                        });
-                      },
-                    ),
-                    const SizedBox(height: 16),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        labelText: 'Side B',
-                      ),
-                      keyboardType: TextInputType.number,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter a side B';
-                        }
-                        return null;
-                      },
-                      onSaved: (value) {
-                        setState(() {
-                          _sideB = double.parse(value!);
-                        });
-                      },
-                    ),
-                    const SizedBox(height: 16),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        labelText: 'Side C',
-                      ),
-                      keyboardType: TextInputType.number,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter a side C';
-                        }
-                        return null;
-                      },
-                      onSaved: (value) {
-                        setState(() {
-                          _sideC = double.parse(value!);
+                          _side = double.parse(value ?? '0');
                         });
                       },
                     ),
@@ -193,7 +155,7 @@ class _TrianglePageState extends State<TrianglePage> {
                             if (_perimeterFormKey.currentState!.validate()) {
                               _perimeterFormKey.currentState!.save();
                               setState(() {
-                                _perimeter = _sideA + _sideB + _sideC;
+                                _perimeter = _side * 3;
                               });
                             }
                           },
@@ -203,9 +165,7 @@ class _TrianglePageState extends State<TrianglePage> {
                           onPressed: () {
                             _perimeterFormKey.currentState!.reset();
                             setState(() {
-                              _sideA = 0;
-                              _sideB = 0;
-                              _sideC = 0;
+                              _side = 0;
                               _perimeter = 0;
                             });
                           },

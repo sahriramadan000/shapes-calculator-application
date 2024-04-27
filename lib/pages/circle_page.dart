@@ -38,9 +38,9 @@ class _CirclePageState extends State<CirclePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/circle.png',
-                      width: 100,
-                      height: 100,
+                      'assets/circle_area.png',
+                      width: 120,
+                      height: 120,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
@@ -104,9 +104,9 @@ class _CirclePageState extends State<CirclePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/circle.png',
-                      width: 100,
-                      height: 100,
+                      'assets/circle_perimeter.png',
+                      width: 120,
+                      height: 120,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(

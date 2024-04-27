@@ -38,9 +38,9 @@ class _RectanglePageState extends State<RectanglePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/rectangle.png',
-                      width: 100,
-                      height: 100,
+                      'assets/rectangle_area.png',
+                      width: 150,
+                      height: 130,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
@@ -123,9 +123,9 @@ class _RectanglePageState extends State<RectanglePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/rectangle.png',
-                      width: 100,
-                      height: 100,
+                      'assets/rectangle_perimeter.png',
+                      width: 150,
+                      height: 130,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(

@@ -6,18 +6,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Geometric Shapes'),
+        title: const Text('Geometric Shapes'),
       ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            Container(
+            SizedBox(
               height: 200,
               child: DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
                 child: Center(
                   child: Image.asset(
                     'assets/shapes_calculator_logo.png',
@@ -27,7 +24,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            ListTile(
+            const ListTile(
               title: Text(
                 'IDENTITY',
                 style: TextStyle(
@@ -36,16 +33,16 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            Divider(
+            const Divider(
               color: Colors.black,
               height: 1,
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.person),
               title: Text('Sahri Ramadan'),
               subtitle: Text('20210801460'),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.person),
               title: Text('Andika Noor Ismawan'),
               subtitle: Text('20210801465'),
@@ -73,7 +70,7 @@ class HomePage extends StatelessWidget {
                     );
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -84,11 +81,11 @@ class HomePage extends StatelessWidget {
                             height: 50,
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Text(
                           shape.name,
                           textAlign: TextAlign.center,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),

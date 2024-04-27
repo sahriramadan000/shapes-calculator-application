@@ -9,8 +9,10 @@ class _ParallelogramPageState extends State<ParallelogramPage> {
   final GlobalKey<FormState> _areaFormKey = GlobalKey<FormState>();
   final GlobalKey<FormState> _perimeterFormKey = GlobalKey<FormState>();
 
-  double _base = 0;
+  double _length = 0;
   double _height = 0;
+  double _side1 = 0;
+  double _side2 = 0;
   double _area = 0;
   double _perimeter = 0;
 
@@ -38,25 +40,25 @@ class _ParallelogramPageState extends State<ParallelogramPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/parallelogram.png',
-                      width: 100,
-                      height: 100,
+                      'assets/parallelogram_area.png',
+                      width: 130,
+                      height: 130,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Base',
+                        labelText: 'Length',
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter a base';
+                          return 'Please enter a length';
                         }
                         return null;
                       },
                       onSaved: (value) {
                         setState(() {
-                          _base = double.parse(value!);
+                          _length = double.parse(value!);
                         });
                       },
                     ),
@@ -87,7 +89,7 @@ class _ParallelogramPageState extends State<ParallelogramPage> {
                             if (_areaFormKey.currentState!.validate()) {
                               _areaFormKey.currentState!.save();
                               setState(() {
-                                _area = _base * _height;
+                                _area = _length * _height;
                               });
                             }
                           },
@@ -97,7 +99,7 @@ class _ParallelogramPageState extends State<ParallelogramPage> {
                           onPressed: () {
                             _areaFormKey.currentState!.reset();
                             setState(() {
-                              _base = 0;
+                              _length = 0;
                               _height = 0;
                               _area = 0;
                             });
@@ -123,61 +125,43 @@ class _ParallelogramPageState extends State<ParallelogramPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/parallelogram.png',
-                      width: 100,
-                      height: 100,
+                      'assets/parallelogram_perimeter.png',
+                      width: 130,
+                      height: 130,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Base',
+                        labelText: 'Side 1',
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter a base';
+                          return 'Please enter a side 1';
                         }
                         return null;
                       },
                       onSaved: (value) {
                         setState(() {
-                          _base = double.parse(value!);
+                          _side1 = double.parse(value!);
                         });
                       },
                     ),
                     const SizedBox(height: 16),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Height',
+                        labelText: 'Side 2',
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter a height';
+                          return 'Please enter a side 2';
                         }
                         return null;
                       },
                       onSaved: (value) {
                         setState(() {
-                          _height = double.parse(value!);
-                        });
-                      },
-                    ),
-                    const SizedBox(height: 16),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        labelText: 'Side Length',
-                      ),
-                      keyboardType: TextInputType.number,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter a side length';
-                        }
-                        return null;
-                      },
-                      onSaved: (value) {
-                        setState(() {
-                          _perimeter = 2 * (_base + _height);
+                          _side2 = double.parse(value!);
                         });
                       },
                     ),
@@ -189,6 +173,10 @@ class _ParallelogramPageState extends State<ParallelogramPage> {
                           onPressed: () {
                             if (_perimeterFormKey.currentState!.validate()) {
                               _perimeterFormKey.currentState!.save();
+
+                              setState(() {
+                                _perimeter = 2 * (_side1 + _side2);
+                              });
                             }
                           },
                           child: const Text('Calculate'),
@@ -197,8 +185,8 @@ class _ParallelogramPageState extends State<ParallelogramPage> {
                           onPressed: () {
                             _perimeterFormKey.currentState!.reset();
                             setState(() {
-                              _base = 0;
-                              _height = 0;
+                              _side1 = 0;
+                              _side2 = 0;
                               _perimeter = 0;
                             });
                           },

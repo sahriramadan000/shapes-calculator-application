@@ -9,8 +9,10 @@ class _KitePageState extends State<KitePage> {
   final GlobalKey<FormState> _areaFormKey = GlobalKey<FormState>();
   final GlobalKey<FormState> _perimeterFormKey = GlobalKey<FormState>();
 
-  double _length = 0;
-  double _height = 0;
+  double _diagonal1 = 0;
+  double _diagonal2 = 0;
+  double _side1 = 0;
+  double _side2 = 0;
   double _area = 0;
   double _perimeter = 0;
 
@@ -38,43 +40,43 @@ class _KitePageState extends State<KitePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/kite.png',
-                      width: 100,
-                      height: 100,
+                      'assets/kite_area.png',
+                      width: 130,
+                      height: 130,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Length',
+                        labelText: 'Diagonal 1',
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter a length';
+                          return 'Please enter a diagonal 1';
                         }
                         return null;
                       },
                       onSaved: (value) {
                         setState(() {
-                          _length = double.parse(value!);
+                          _diagonal1 = double.parse(value!);
                         });
                       },
                     ),
                     const SizedBox(height: 16),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Height',
+                        labelText: 'Diagonal 2',
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter a height';
+                          return 'Please enter a diagonal 2';
                         }
                         return null;
                       },
                       onSaved: (value) {
                         setState(() {
-                          _height = double.parse(value!);
+                          _diagonal2 = double.parse(value!);
                         });
                       },
                     ),
@@ -87,7 +89,7 @@ class _KitePageState extends State<KitePage> {
                             if (_areaFormKey.currentState!.validate()) {
                               _areaFormKey.currentState!.save();
                               setState(() {
-                                _area = 0.5 * _length * _height;
+                                _area = 0.5 * _diagonal1 * _diagonal2;
                               });
                             }
                           },
@@ -97,8 +99,8 @@ class _KitePageState extends State<KitePage> {
                           onPressed: () {
                             _areaFormKey.currentState!.reset();
                             setState(() {
-                              _length = 0;
-                              _height = 0;
+                              _diagonal1 = 0;
+                              _diagonal2 = 0;
                               _area = 0;
                             });
                           },
@@ -123,43 +125,43 @@ class _KitePageState extends State<KitePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/kite.png',
-                      width: 100,
-                      height: 100,
+                      'assets/kite_perimeter.png',
+                      width: 130,
+                      height: 130,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Length',
+                        labelText: 'Side 1',
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter a length';
+                          return 'Please enter a side 1';
                         }
                         return null;
                       },
                       onSaved: (value) {
                         setState(() {
-                          _length = double.parse(value!);
+                          _side1 = double.parse(value!);
                         });
                       },
                     ),
                     const SizedBox(height: 16),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Height',
+                        labelText: 'Side 2',
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter a height';
+                          return 'Please enter a side 2';
                         }
                         return null;
                       },
                       onSaved: (value) {
                         setState(() {
-                          _height = double.parse(value!);
+                          _side2 = double.parse(value!);
                         });
                       },
                     ),
@@ -172,7 +174,7 @@ class _KitePageState extends State<KitePage> {
                             if (_perimeterFormKey.currentState!.validate()) {
                               _perimeterFormKey.currentState!.save();
                               setState(() {
-                                _perimeter = 2 * (_length + _height);
+                                _perimeter = 2 * (_side1 + _side2);
                               });
                             }
                           },
@@ -182,8 +184,8 @@ class _KitePageState extends State<KitePage> {
                           onPressed: () {
                             _perimeterFormKey.currentState!.reset();
                             setState(() {
-                              _length = 0;
-                              _height = 0;
+                              _side1 = 0;
+                              _side2 = 0;
                               _perimeter = 0;
                             });
                           },

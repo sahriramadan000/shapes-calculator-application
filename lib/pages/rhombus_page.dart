@@ -38,9 +38,9 @@ class _RhombusPageState extends State<RhombusPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/rhombus.png',
-                      width: 100,
-                      height: 100,
+                      'assets/rhombus_area.png',
+                      width: 130,
+                      height: 130,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
@@ -122,14 +122,14 @@ class _RhombusPageState extends State<RhombusPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/rhombus.png',
-                      width: 100,
-                      height: 100,
+                      'assets/rhombus_perimeter.png',
+                      width: 130,
+                      height: 130,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Side Length',
+                        labelText: 'Side',
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {

@@ -9,7 +9,7 @@ class _SquarePageState extends State<SquarePage> {
   final GlobalKey<FormState> _areaFormKey = GlobalKey<FormState>();
   final GlobalKey<FormState> _perimeterFormKey = GlobalKey<FormState>();
 
-  double _side1 = 0;
+  double _side = 0;
   double _area = 0;
   double _perimeter = 0;
 
@@ -37,14 +37,14 @@ class _SquarePageState extends State<SquarePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/square.png',
+                      'assets/square_area.png',
                       width: 100,
                       height: 100,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Side 1',
+                        labelText: 'Side',
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
@@ -55,7 +55,7 @@ class _SquarePageState extends State<SquarePage> {
                       },
                       onSaved: (value) {
                         setState(() {
-                          _side1 = double.parse(value ?? '0');
+                          _side = double.parse(value ?? '0');
                         });
                       },
                     ),
@@ -68,7 +68,7 @@ class _SquarePageState extends State<SquarePage> {
                             if (_areaFormKey.currentState!.validate()) {
                               _areaFormKey.currentState!.save();
                               setState(() {
-                                _area = _side1 * _side1;
+                                _area = _side * _side;
                               });
                             }
                           },
@@ -76,9 +76,9 @@ class _SquarePageState extends State<SquarePage> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                _areaFormKey.currentState!.reset();
+                            _areaFormKey.currentState!.reset();
                             setState(() {
-                              _side1 = 0;
+                              _side = 0;
                               _area = 0;
                             });
                           },
@@ -103,14 +103,14 @@ class _SquarePageState extends State<SquarePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/square.png',
+                      'assets/square_perimeter.png',
                       width: 100,
                       height: 100,
                     ), // Add image here
                     const SizedBox(height: 16),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Side 1',
+                        labelText: 'Side',
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
@@ -121,7 +121,7 @@ class _SquarePageState extends State<SquarePage> {
                       },
                       onSaved: (value) {
                         setState(() {
-                          _side1 = double.parse(value ?? '0');
+                          _side = double.parse(value ?? '0');
                         });
                       },
                     ),
@@ -134,7 +134,7 @@ class _SquarePageState extends State<SquarePage> {
                             if (_perimeterFormKey.currentState!.validate()) {
                               _perimeterFormKey.currentState!.save();
                               setState(() {
-                                _perimeter = 4 * _side1;
+                                _perimeter = 4 * _side;
                               });
                             }
                           },
@@ -144,7 +144,7 @@ class _SquarePageState extends State<SquarePage> {
                           onPressed: () {
                             _perimeterFormKey.currentState!.reset();
                             setState(() {
-                              _side1 = 0;
+                              _side = 0;
                               _perimeter = 0;
                             });
                           },
