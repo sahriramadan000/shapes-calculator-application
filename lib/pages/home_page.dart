@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
                 ),
                 child: Center(
                   child: Image.asset(
-                    'assets/circle-shapes.png',
+                    'assets/shapes_calculator_logo.png',
                     width: 100,
                     height: 100,
                   ),
