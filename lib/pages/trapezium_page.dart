@@ -18,7 +18,6 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
   double _side4 = 0;
   double _area = 0;
   double _perimeter = 0;
-  String _selectedOption = 'Area';
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +25,8 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Trapezium'),
-          bottom: TabBar(
+          title: const Text('Trapezium'),
+          bottom: const TabBar(
             tabs: [
               Tab(text: 'Area'),
               Tab(text: 'Perimeter'),
@@ -48,9 +47,9 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                       width: 100,
                       height: 100,
                     ), // Add image here
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Base 1',
                       ),
                       keyboardType: TextInputType.number,
@@ -66,9 +65,9 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                         });
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Base 2',
                       ),
                       keyboardType: TextInputType.number,
@@ -84,9 +83,9 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                         });
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Height',
                       ),
                       keyboardType: TextInputType.number,
@@ -102,7 +101,7 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                         });
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -115,7 +114,7 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                               });
                             }
                           },
-                          child: Text('Calculate'),
+                          child: const Text('Calculate'),
                         ),
                         ElevatedButton(
                           onPressed: () {
@@ -127,14 +126,14 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                               _area = 0;
                             });
                           },
-                          child: Text('Clear'),
+                          child: const Text('Clear'),
                         ),
                       ],
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Text(
                       'Area: ${_area.toStringAsFixed(2)}',
-                      style: TextStyle(fontSize: 18),
+                      style: const TextStyle(fontSize: 18),
                     ),
                   ],
                 ),
@@ -152,9 +151,9 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                       width: 100,
                       height: 100,
                     ), // Add image here
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Side 1',
                       ),
                       keyboardType: TextInputType.number,
@@ -170,9 +169,9 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                         });
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Side 2',
                       ),
                       keyboardType: TextInputType.number,
@@ -188,9 +187,9 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                         });
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Side 3',
                       ),
                       keyboardType: TextInputType.number,
@@ -206,9 +205,9 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                         });
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Side 4',
                       ),
                       keyboardType: TextInputType.number,
@@ -224,7 +223,7 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                         });
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -237,7 +236,7 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                               });
                             }
                           },
-                          child: Text('Calculate'),
+                          child: const Text('Calculate'),
                         ),
                         ElevatedButton(
                           onPressed: () {
@@ -254,10 +253,10 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Text(
                       'Perimeter: ${_perimeter.toStringAsFixed(2)}',
-                      style: TextStyle(fontSize: 18),
+                      style: const TextStyle(fontSize: 18),
                     ),
                   ],
                 ),
