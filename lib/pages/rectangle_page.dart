@@ -23,7 +23,7 @@ class _RectanglePageState extends State<RectanglePage> {
           Container(
             padding: EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Image.asset('assets/rectangle-shapes.png', width: 100, height: 100,),
+            child: Image.asset('assets/rectangle.png', width: 100, height: 100,),
           ),
           Form(
             key: _formKey,

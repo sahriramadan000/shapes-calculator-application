@@ -23,7 +23,7 @@ class _CirclePageState extends State<CirclePage> {
           Container(
             padding: EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Image.asset('assets/circle-shapes.png', width: 100, height: 100,),
+            child: Image.asset('assets/circle.png', width: 100, height: 100,),
           ),
           Form(
             key: _formKey,

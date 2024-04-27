@@ -19,42 +19,42 @@ class Shape {
 final List<Shape> shapes = [
   Shape(
     name: 'Square',
-    imagePath: 'assets/geometry/square.png',
+    imagePath: 'assets/square.png',
     page: SquarePage(),
   ),
   Shape(
     name: 'Rectangle',
-    imagePath: 'assets/geometry/rectangle.png',
+    imagePath: 'assets/rectangle.png',
     page: RectanglePage(),
   ),
   Shape(
     name: 'Triangle',
-    imagePath: 'assets/geometry/triangle.png',
+    imagePath: 'assets/triangle.png',
     page: TrianglePage(),
   ),
   Shape(
     name: 'Circle',
-    imagePath: 'assets/geometry/circle.png',
+    imagePath: 'assets/circle.png',
     page: CirclePage(),
   ),
   Shape(
     name: 'Kite',
-    imagePath: 'assets/geometry/kite.png',
+    imagePath: 'assets/kite.png',
     page: KitePage(),
   ),
   Shape(
     name: 'Rhombus',
-    imagePath: 'assets/geometry/rhombus.png',
+    imagePath: 'assets/rhombus.png',
     page: RhombusPage(),
   ),
   Shape(
     name: 'Parallelogram',
-    imagePath: 'assets/geometry/Parallelogram.png',
+    imagePath: 'assets/parallelogram.png',
     page: ParallelogramPage(),
   ),
   Shape(
     name: 'Trapezium',
-    imagePath: 'assets/geometry/trapezium.png',
+    imagePath: 'assets/trapezium.png',
     page: TrapeziumPage(),
   ),
 ];
